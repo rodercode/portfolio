@@ -13,6 +13,13 @@
         <ion-icon class="icon" :icon="menu" />
       </div>
     </header>
+    <section class="section-hero">
+      <h1 class="headline-primary">Frontend & WEB APP DEVELOPMENT</h1>
+      <p class="hero-body">
+        I build responsive, user-friendly and scalable webb-applications
+      </p>
+      <button class="btn">Say Hello</button>
+    </section>
   </div>
 </template>
 
@@ -31,20 +38,52 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-
-.home{
+//////////////////////
+// CONTAINER
+/////////////////////
+.home {
   padding: 3.2rem 1.6rem;
 }
+//////////////////////
+// HEADER
+/////////////////////
 .main-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  border: 1px solid black;
+  .nav-list {
+    display: none;
+  }
 }
 
-.nav-list {
-  display: none;
+//////////////////////
+// HERO SECTION
+/////////////////////
+
+.section-hero {
+  border: 1px solid black;
+  .headline-primary,
+  .hero-body {
+    margin-bottom: 3.2rem;
+  }
+  .headline-primary {
+    font-size: 3rem;
+  }
+  .hero-body {
+    font-size: 1.6rem;
+  }
+  .btn {
+    width: 100%;
+    background-color: gray;
+    color: #fff;
+    border: none;
+    padding: 1.6rem 3.2rem;
+    font-weight: 600;
+  }
 }
 
+// GENERAL
 .icon {
   height: 3.2rem;
   width: 3.2rem;
