@@ -1,5 +1,6 @@
 <template>
   <div class="home">
+    <!-- HEADER -->
     <header class="main-header">
       <div class="brand-logo">Roder.me</div>
       <nav class="main-nav">
@@ -13,13 +14,17 @@
         <ion-icon class="icon" :icon="menu" />
       </div>
     </header>
+
+    <!-- HERO SECTION -->
     <section class="section-hero">
       <h1 class="headline-primary">Frontend & WEB APP DEVELOPMENT</h1>
       <p class="hero-body">
         I build responsive, user-friendly and scalable webb-applications
       </p>
-      <button class="btn">Say Hello</button>
+      <a class="btn-link">Say Hello</a>
     </section>
+
+    <!-- ABOUT SECTION -->
     <section class="section-about full-bleed">
       <h2 class="headline-secondary">Hi, I'm Roder Snow. Nice to meet you.</h2>
       <p class="about-body">
@@ -29,6 +34,29 @@
         building software for an advertising agency, a start-up, a student-led
         design studio, and a huge corporation.
       </p>
+    </section>
+
+    <!-- PROJECT SECTION -->
+    <section class="section-project">
+      <h2 class="headline-secondary">My Recent Projects</h2>
+      <ul class="project-list">
+        <li v-for="project in projectList" class="project-item">
+          <div class="project-img-box">
+            <img
+              class="project-img"
+              src="../assets/img/holding-picture.jpg"
+              alt="picture of male holding a photo in his right hand"
+            />
+          </div>
+          <div class="project-text-box">
+            <h3 class="project-title">{{ project.title }}</h3>
+            <p class="project-body">
+              {{ project.text }}
+            </p>
+            <a class="btn-link">Viste</a>
+          </div>
+        </li>
+      </ul>
     </section>
   </div>
 </template>
@@ -42,6 +70,20 @@ export default defineComponent({
   data() {
     return {
       menu,
+      projectList: [
+        {
+          title: "Agyle Intelligence",
+          text: "A platform for automating data collection and reporting throughout teams, operations and supply chains.",
+        },
+        {
+          title: "Hal-Con",
+          text: "Atlantic Canada's premier sci-fi and gaming convention. ",
+        },
+        {
+          title: "Lady Slipper Cottages",
+          text: "A platform for automating data collection and reporting throughout teams, operations and supply chains.",
+        },
+      ],
     };
   },
 });
@@ -72,23 +114,10 @@ export default defineComponent({
 .section-hero {
   border: 1px solid black;
   margin-bottom: 3.2rem;
+
   .headline-primary,
   .hero-body {
     margin-bottom: 3.2rem;
-  }
-  .headline-primary {
-    font-size: 3rem;
-  }
-  .hero-body {
-    font-size: 1.6rem;
-  }
-  .btn {
-    width: 100%;
-    background-color: gray;
-    color: #fff;
-    border: none;
-    padding: 1.6rem 3.2rem;
-    font-weight: 600;
   }
 }
 
@@ -99,10 +128,12 @@ export default defineComponent({
 .section-about {
   background-color: gray;
   padding: 4.8rem 0;
+  margin-bottom: 3.2rem;
 
-  .headline-secondary, .about-body{
+  .headline-secondary,
+  .about-body {
     text-align: center;
-    margin-bottom:1.6rem;
+    margin-bottom: 1.6rem;
   }
 
   .headline-secondary {
@@ -112,6 +143,53 @@ export default defineComponent({
 
   .about-body {
     font-size: 1.8rem;
+  }
+}
+
+//////////////////////
+// Project Section
+/////////////////////
+
+.section-project {
+  .headline-secondary {
+    border-bottom: 1px solid black;
+    padding-bottom: 8px;
+  }
+  .headline-secondary {
+    font-size: 2.4rem;
+    text-align: center;
+    margin-bottom: 1.6rem;
+  }
+  .project-item {
+    // DISPLAY
+    display: grid;
+    grid-row: 1fr 1fr;
+    grid-column: 1fr;
+    row-gap: 1.6rem;
+
+    // BOX MODEL
+    border-bottom: 1px solid black;
+    padding: 4.8rem 0;
+
+    // TYPO
+    text-align: center;
+
+    .project-img-box {
+      .project-img {
+        background: gray;
+        width: 100%;
+        height: 100%;
+      }
+    }
+    .project-text-box {
+      .project-title {
+        font-size: 2rem;
+        margin-bottom: 1.6rem;
+      }
+      .project-body {
+        margin-bottom: 3.2rem;
+      }
+    }
   }
 }
 
@@ -125,5 +203,20 @@ export default defineComponent({
 .icon {
   height: 3.2rem;
   width: 3.2rem;
+}
+.btn-link {
+  // DISPLAY
+  display: inline-block;
+
+  // TYPO
+  text-align: center;
+  color: #fff;
+  font-weight: 600;
+
+  // BOX MODEL
+  width: 100%;
+  background-color: gray;
+  border: none;
+  padding: 1.2rem 2.4rem;
 }
 </style>
