@@ -20,6 +20,16 @@
       </p>
       <button class="btn">Say Hello</button>
     </section>
+    <section class="section-about full-bleed">
+      <h2 class="headline-secondary">Hi, I'm Roder Snow. Nice to meet you.</h2>
+      <p class="about-body">
+        Back in 2012, I decided to try my hand at creating custom Tumblr themes
+        and tumbled head first into the rabbit hole of coding and web
+        development. Fast-forward to today, and I’ve had the privilege of
+        building software for an advertising agency, a start-up, a student-led
+        design studio, and a huge corporation.
+      </p>
+    </section>
   </div>
 </template>
 
@@ -38,12 +48,10 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
-//////////////////////
-// CONTAINER
-/////////////////////
 .home {
   padding: 3.2rem 1.6rem;
 }
+
 //////////////////////
 // HEADER
 /////////////////////
@@ -63,6 +71,7 @@ export default defineComponent({
 
 .section-hero {
   border: 1px solid black;
+  margin-bottom: 3.2rem;
   .headline-primary,
   .hero-body {
     margin-bottom: 3.2rem;
@@ -81,6 +90,35 @@ export default defineComponent({
     padding: 1.6rem 3.2rem;
     font-weight: 600;
   }
+}
+
+//////////////////////
+// ABOUT SECTION
+/////////////////////
+
+.section-about {
+  background-color: gray;
+  padding: 4.8rem 0;
+
+  .headline-secondary, .about-body{
+    text-align: center;
+    margin-bottom:1.6rem;
+  }
+
+  .headline-secondary {
+    font-size: 2.4rem;
+    color: #fff;
+  }
+
+  .about-body {
+    font-size: 1.8rem;
+  }
+}
+
+// UTILITY CLASSES
+.full-bleed {
+  box-shadow: 0 0 0 100vmax gray;
+  clip-path: inset(0 -100vmax);
 }
 
 // GENERAL
