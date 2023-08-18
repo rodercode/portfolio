@@ -28,11 +28,10 @@
     <section class="section-about full-bleed">
       <h2 class="headline-secondary">Hi, I'm Roder Snow. Nice to meet you.</h2>
       <p class="about-body">
-        Back in 2012, I decided to try my hand at creating custom Tumblr themes
-        and tumbled head first into the rabbit hole of coding and web
-        development. Fast-forward to today, and I’ve had the privilege of
-        building software for an advertising agency, a start-up, a student-led
-        design studio, and a huge corporation.
+        I'm Roder Snow, a passionate frontend development student with a love
+        for crafting engaging and user-friendly web experiences. Through this
+        portfolio, I'm excited to showcase some of my best projects, skills, and
+        journey in the world of frontend development.
       </p>
     </section>
 
@@ -114,6 +113,8 @@ export default defineComponent({
 <style lang="scss" scoped>
 .home {
   padding: 3.2rem 1.6rem;
+  display: grid;
+  row-gap: 8rem;
 }
 
 //////////////////////
@@ -123,7 +124,6 @@ export default defineComponent({
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border: 1px solid black;
   .nav-list {
     display: none;
   }
@@ -134,7 +134,6 @@ export default defineComponent({
 /////////////////////
 
 .section-hero {
-  border: 1px solid black;
   margin-bottom: 3.2rem;
 
   .headline-primary,
