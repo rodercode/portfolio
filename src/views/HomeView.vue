@@ -58,6 +58,28 @@
         </li>
       </ul>
     </section>
+
+    <!-- Contact Section -->
+    <section class="section-contact">
+      <h2 class="headline-secondary">
+        Thanks for taking your time to reach out
+      </h2>
+      <form class="contact-form">
+        <div class="form-group">
+          <label>Name</label>
+          <input type="text" />
+        </div>
+        <div class="form-group">
+          <label>Password</label>
+          <input type="password" />
+        </div>
+        <div class="form-group form-group--message">
+          <label>Message</label>
+          <input type="text" />
+        </div>
+        <button class="btn">Get In Touch</button>
+      </form>
+    </section>
   </div>
 </template>
 
@@ -117,6 +139,7 @@ export default defineComponent({
 
   .headline-primary,
   .hero-body {
+    text-align: center;
     margin-bottom: 3.2rem;
   }
 }
@@ -137,7 +160,6 @@ export default defineComponent({
   }
 
   .headline-secondary {
-    font-size: 2.4rem;
     color: #fff;
   }
 
@@ -151,13 +173,12 @@ export default defineComponent({
 /////////////////////
 
 .section-project {
+  margin-bottom: 6.4rem;
   .headline-secondary {
     border-bottom: 1px solid black;
     padding-bottom: 8px;
   }
   .headline-secondary {
-    font-size: 2.4rem;
-    text-align: center;
     margin-bottom: 1.6rem;
   }
   .project-item {
@@ -193,13 +214,66 @@ export default defineComponent({
   }
 }
 
+//////////////////////
+// CONTACT SECTION
+/////////////////////
+.section-contact {
+  .headline-secondary {
+    margin-bottom: 2.4rem;
+  }
+  .contact-form {
+    .form-group {
+      // DISPLAY
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+
+      // BOX MODEL
+      margin-bottom: 1.6rem;
+
+      input {
+        width: 100%;
+        padding: 0.4rem 0rem;
+      }
+    }
+    .form-group--message {
+      input {
+        padding: 4.8rem 0;
+      }
+    }
+
+    .btn {
+      // TYPO
+      color: #fff;
+      font-weight: 600;
+
+      // BOX MODEL
+      width: 100%;
+      background-color: gray;
+      border: none;
+      padding: 1.2rem 2.4rem;
+    }
+  }
+}
+
+//////////////////////
 // UTILITY CLASSES
+/////////////////////
 .full-bleed {
   box-shadow: 0 0 0 100vmax gray;
   clip-path: inset(0 -100vmax);
 }
 
+//////////////////////
 // GENERAL
+/////////////////////
+.headline-primary {
+  font-size: 3rem;
+}
+.headline-secondary {
+  font-size: 2.4rem;
+  text-align: center;
+}
 .icon {
   height: 3.2rem;
   width: 3.2rem;
