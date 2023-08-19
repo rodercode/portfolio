@@ -3,12 +3,12 @@
     <!-- HEADER -->
     <header class="main-header">
       <div class="brand-logo">
-        <a href="#"> Roder.me </a>
+        <a class="link" href="#"> Roder.me </a>
       </div>
       <nav class="main-nav">
-        <ul class="nav-list">
-          <li class="nav-link">
-            <a class="nav-link" href="#">About</a>
+        <ul class="link nav-list">
+          <li class="link nav-link">
+            <a class="link nav-link" href="#">About</a>
           </li>
           <li class="nav-link">
             <a class="nav-link" href="#">Project</a>
@@ -353,7 +353,7 @@ export default defineComponent({
 // MEDIA QUERIES
 /////////////////////
 
-// 648 px tablets
+// 544 px huge phones
 @media screen and (min-width: 34em) {
   .container {
     max-width: 45rem;
@@ -363,45 +363,55 @@ export default defineComponent({
     padding: 3.2rem 4.8rem;
   }
 
-  .nav-list {
-    display: flex !important;
-    gap: 3.2rem;
-  }
-
-  .btn--menu {
-    display: none;
+  .main-header {
+    .nav-list {
+      display: flex;
+      gap: 3.2rem;
+    }
+    .btn--menu {
+      display: none;
+    }
   }
 }
 
-// 752 px
+// 752 px tablets
 @media screen and (min-width: 47em) {
   .container {
     gap: 9.6rem;
   }
 
-  .form-group {
-    width: 45% !important;
-  }
-  .form-group--message {
-    width: 100% !important;
+  // CONTACT SECTION
+  .section-contact {
+    .contact-form {
+      .form-group {
+        width: 45%;
+      }
+      .form-group--message {
+        width: 100%;
+      }
+    }
   }
 }
 
 // Desktop size 968px
 @media screen and (min-width: 60.5em) {
-  // CONTAINER
-  a {
-    font-size: 1.5rem !important;
-  }
-
   .container {
     max-width: 980px;
     row-gap: 12.8rem;
   }
+
+  // MAIN HEADER
   .main-header {
-    max-width: 1200px;
+    max-width: 1000px;
     margin: 0 auto;
     padding-bottom: 12.8rem;
+    .link {
+      font-size: 1.5rem;
+    }
+
+    .nav-list .nav-link {
+      font-size: 1.5rem;
+    }
   }
 
   // HERO SECTION
@@ -415,9 +425,8 @@ export default defineComponent({
   .section-about {
     width: 60%;
     margin: 0 auto;
-
     .about-body {
-      font-size: 1.7rem !important;
+      font-size: 1.7rem;
     }
   }
 
@@ -432,7 +441,7 @@ export default defineComponent({
         align-self: center;
 
         .project-body {
-          font-size: 1.5rem !important;
+          font-size: 1.5rem;
         }
       }
     }
@@ -442,12 +451,10 @@ export default defineComponent({
   .section-contact {
     width: 60%;
     margin: 0 auto;
-    .contact-form {
-      .btn--submit {
-        width: auto;
-        padding: 1.2rem 2.4rem;
-        margin: 0 auto;
-      }
+    .contact-form .btn--submit {
+      width: auto;
+      padding: 1.2rem 2.4rem;
+      margin: 0 auto;
     }
   }
 
@@ -463,10 +470,8 @@ export default defineComponent({
     max-width: 1200px;
   }
 
-  .section-project {
-    .project-img-box {
-      width: 80%;
-    }
+  .section-project .project-img-box {
+    width: 80%;
   }
 }
 </style>
