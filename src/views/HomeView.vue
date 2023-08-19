@@ -1,7 +1,6 @@
 <template>
   <div class="home">
     <div class="container">
-      
       <!-- HEADER -->
       <header class="main-header">
         <div class="brand-logo">Roder.me</div>
@@ -215,40 +214,40 @@ export default defineComponent({
 // Project Section
 /////////////////////
 .section-project {
+  padding: 6.4rem 0;
   .headline-secondary {
-    border-bottom: 1px solid black;
-    padding-bottom: 8px;
+    border-bottom: 1px solid $under-line-color;
+    padding-bottom: 1.2rem;
+    font-weight: 600;
   }
-  .headline-secondary {
-    margin-bottom: 1.6rem;
-  }
+  
   .project-item {
     // DISPLAY
     display: grid;
     grid-template-columns: 1fr;
-    row-gap: 1.6rem;
+    row-gap: 2.4rem;
 
     // BOX MODEL
-    border-bottom: 1px solid black;
+    border-bottom: 1px solid $under-line-color;
     padding: 4.8rem 0;
-
+    
     // TYPO
     text-align: center;
-
     .project-img-box {
       .project-img {
-        background: gray;
         width: 100%;
-        height: 100%;
       }
     }
     .project-text-box {
       .project-title {
         font-size: 2rem;
         margin-bottom: 1.6rem;
+        font-weight: 500;
+        color: $grey-color-shade;
       }
       .project-body {
         margin-bottom: 3.2rem;
+        line-height: 1.5;
       }
     }
   }
