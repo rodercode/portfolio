@@ -178,7 +178,7 @@ export default defineComponent({
 .section-hero {
   margin-bottom: 3.2rem;
   text-align: center;
-  height: 70vh;
+  height: 60vh;
 
   .headline-primary {
     font-weight: 700;
