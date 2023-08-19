@@ -130,8 +130,10 @@ export default defineComponent({
 </script>
 
 <style lang="scss" scoped>
+// how to import styles from node_modules
+@import "../assets/sass/main.scss";
 .home {
-  padding: 3.2rem;
+  padding: 1.6rem 3.2rem;
 }
 
 //////////////////////
@@ -139,7 +141,7 @@ export default defineComponent({
 /////////////////////
 .container {
   display: grid;
-  row-gap: 8rem;
+  row-gap: 6.4rem;
 }
 
 //////////////////////
@@ -149,9 +151,23 @@ export default defineComponent({
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 8rem;
+  margin-bottom: 9.8rem;
+
+  .brand-logo{
+    font-size: 1.4rem;
+    font-weight: 600;
+    text-transform: uppercase;
+  }
+
   .nav-list {
     display: none;
+  }
+
+
+
+  .icon {
+    height: 3.2rem;
+    width: 3.2rem;
   }
 }
 
@@ -162,9 +178,17 @@ export default defineComponent({
 .section-hero {
   margin-bottom: 3.2rem;
   text-align: center;
+  height: 70vh;
 
-  .headline-primary,
+  .headline-primary {
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1.6rem;
+    color: $grey-color-shade;
+  }
+
   .hero-body {
+    line-height: 1.6;
     margin-bottom: 3.2rem;
   }
 }
@@ -196,9 +220,7 @@ export default defineComponent({
 //////////////////////
 // Project Section
 /////////////////////
-
 .section-project {
-  margin-bottom: 6.4rem;
   .headline-secondary {
     border-bottom: 1px solid black;
     padding-bottom: 8px;
@@ -308,10 +330,6 @@ export default defineComponent({
   font-size: 2.4rem;
   text-align: center;
 }
-.icon {
-  height: 3.2rem;
-  width: 3.2rem;
-}
 .btn-link {
   // DISPLAY
   display: inline-block;
@@ -319,11 +337,11 @@ export default defineComponent({
   // TYPO
   text-align: center;
   color: #fff;
-  font-weight: 600;
+  font-weight: 700;
   width: 100%;
 
   // BOX MODEL
-  background-color: gray;
+  background-color: $primary-color;
   border: none;
   padding: 1.2rem 4.8rem;
 }
@@ -426,7 +444,6 @@ export default defineComponent({
   .container {
     max-width: 1100px;
   }
-
   .section-project {
     .project-img {
       width: 80% !important;
