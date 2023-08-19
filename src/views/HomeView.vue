@@ -1,21 +1,22 @@
 <template>
   <div class="home">
-    <!-- HEADER -->
-    <header class="main-header">
-      <div class="brand-logo">Roder.me</div>
-      <nav class="main-nav">
-        <ul class="nav-list">
-          <li class="nav-link">About</li>
-          <li class="nav-link">Project</li>
-          <li class="nav-link">Contact</li>
-        </ul>
-      </nav>
-      <div class="btn btn--menu">
-        <ion-icon class="icon" :icon="menu" />
-      </div>
-    </header>
-
     <div class="container">
+      
+      <!-- HEADER -->
+      <header class="main-header">
+        <div class="brand-logo">Roder.me</div>
+        <nav class="main-nav">
+          <ul class="nav-list">
+            <li class="nav-link">About</li>
+            <li class="nav-link">Project</li>
+            <li class="nav-link">Contact</li>
+          </ul>
+        </nav>
+        <div class="btn btn--menu">
+          <ion-icon class="icon" :icon="menu" />
+        </div>
+      </header>
+
       <!-- HERO SECTION -->
       <section class="section-hero">
         <h1 class="headline-primary">Frontend & WEB APP DEVELOPMENT</h1>
@@ -27,9 +28,7 @@
 
       <!-- ABOUT SECTION -->
       <section class="section-about full-bleed">
-        <h2 class="headline-secondary">
-          Hi, I'm Roder. Nice to meet you.
-        </h2>
+        <h2 class="headline-secondary">Hi, I'm Roder. Nice to meet you.</h2>
         <p class="about-body">
           I'm Roder Snow, a passionate frontend development student with a love
           for crafting engaging and user-friendly web experiences. Through this
@@ -141,7 +140,7 @@ export default defineComponent({
 /////////////////////
 .container {
   display: grid;
-  row-gap: 6.4rem;
+  row-gap: 8rem;
 }
 
 //////////////////////
@@ -151,9 +150,8 @@ export default defineComponent({
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-bottom: 9.8rem;
 
-  .brand-logo{
+  .brand-logo {
     font-size: 1.4rem;
     font-weight: 600;
     text-transform: uppercase;
@@ -162,9 +160,6 @@ export default defineComponent({
   .nav-list {
     display: none;
   }
-
-
-
   .icon {
     height: 3.2rem;
     width: 3.2rem;
@@ -178,7 +173,7 @@ export default defineComponent({
 .section-hero {
   margin-bottom: 3.2rem;
   text-align: center;
-  height: 60vh;
+  padding: 6.4rem 0;
 
   .headline-primary {
     font-weight: 700;
@@ -203,8 +198,8 @@ export default defineComponent({
   margin-bottom: 3.2rem;
   text-align: center;
 
-  .headline-secondary{
-    color:#fff;
+  .headline-secondary {
+    color: #fff;
     font-weight: 600;
     line-height: 1.2;
     margin-bottom: 3.2rem;
