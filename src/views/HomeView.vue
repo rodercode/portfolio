@@ -28,7 +28,7 @@
       <!-- ABOUT SECTION -->
       <section class="section-about full-bleed">
         <h2 class="headline-secondary">
-          Hi, I'm Roder Snow. Nice to meet you.
+          Hi, I'm Roder. Nice to meet you.
         </h2>
         <p class="about-body">
           I'm Roder Snow, a passionate frontend development student with a love
@@ -133,7 +133,7 @@ export default defineComponent({
 // how to import styles from node_modules
 @import "../assets/sass/main.scss";
 .home {
-  padding: 1.6rem 3.2rem;
+  padding: 1.6rem 2.4rem;
 }
 
 //////////////////////
@@ -198,22 +198,21 @@ export default defineComponent({
 /////////////////////
 
 .section-about {
-  background-color: gray;
-  padding: 4.8rem 0;
+  background-color: $primary-color;
+  padding: 6.4rem 0;
   margin-bottom: 3.2rem;
+  text-align: center;
 
-  .headline-secondary,
-  .about-body {
-    text-align: center;
-    margin-bottom: 1.6rem;
+  .headline-secondary{
+    color:#fff;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 3.2rem;
   }
-
-  .headline-secondary {
-    color: #fff;
-  }
-
   .about-body {
     font-size: 1.8rem;
+    line-height: 1.6;
+    color: $light-color;
   }
 }
 
@@ -316,7 +315,7 @@ export default defineComponent({
 // UTILITY CLASSES
 /////////////////////
 .full-bleed {
-  box-shadow: 0 0 0 100vmax gray;
+  box-shadow: 0 0 0 100vmax $primary-color;
   clip-path: inset(0 -100vmax);
 }
 
