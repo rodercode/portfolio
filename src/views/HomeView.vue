@@ -1,26 +1,35 @@
 <template>
   <div class="home">
+    <!-- HEADER -->
+    <header class="main-header">
+      <div class="brand-logo">
+        <a href="#"> Roder.me </a>
+      </div>
+      <nav class="main-nav">
+        <ul class="nav-list">
+          <li class="nav-link">
+            <a class="nav-link" href="#">About</a>
+          </li>
+          <li class="nav-link">
+            <a class="nav-link" href="#">Project</a>
+          </li>
+          <li class="nav-link">
+            <a class="nav-link" href="">Contact</a>
+          </li>
+        </ul>
+      </nav>
+      <div class="btn btn--menu">
+        <ion-icon class="icon" :icon="menu" />
+      </div>
+    </header>
     <div class="container">
-      <!-- HEADER -->
-      <header class="main-header">
-        <div class="brand-logo">Roder.me</div>
-        <nav class="main-nav">
-          <ul class="nav-list">
-            <li class="nav-link">About</li>
-            <li class="nav-link">Project</li>
-            <li class="nav-link">Contact</li>
-          </ul>
-        </nav>
-        <div class="btn btn--menu">
-          <ion-icon class="icon" :icon="menu" />
-        </div>
-      </header>
-
       <!-- HERO SECTION -->
       <section class="section-hero">
         <h1 class="headline-primary">Frontend & WEB APP DEVELOPMENT</h1>
         <p class="hero-body">
-          I build responsive, user-friendly and scalable webb-applications
+          I create web applications known for their responsiveness,
+          user-friendliness, and scalability. With thoughtful design and
+          advanced coding. I'm able to create a seamless user experience.
         </p>
         <a class="btn-link">Say Hello</a>
       </section>
@@ -134,9 +143,6 @@ export default defineComponent({
   padding: 1.6rem 2.4rem;
 }
 
-//////////////////////
-// CONTAINER
-/////////////////////
 .container {
   display: grid;
   row-gap: 6.4rem;
@@ -149,6 +155,7 @@ export default defineComponent({
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding-bottom: 6.4rem;
 
   .brand-logo {
     font-size: 1.4rem;
@@ -158,32 +165,28 @@ export default defineComponent({
 
   .nav-list {
     display: none;
+    .nav-link {
+      font-size: 1.4rem;
+    }
   }
   .icon {
     height: 3.2rem;
     width: 3.2rem;
   }
 }
-
 //////////////////////
 // HERO SECTION
 /////////////////////
 
 .section-hero {
-  margin-bottom: 3.2rem;
   text-align: center;
-  padding: 6.4rem 0;
-
-  .headline-primary {
-    font-weight: 700;
-    line-height: 1.2;
-    margin-bottom: 1.6rem;
-    color: $grey-color-shade;
-  }
+  padding: 8rem 0;
+  height: 65vh;
 
   .hero-body {
-    line-height: 1.6;
+    line-height: 1.7;
     margin-bottom: 3.2rem;
+    font-size: 1.8rem;
   }
 }
 
@@ -194,18 +197,17 @@ export default defineComponent({
 .section-about {
   background-color: $primary-color;
   padding: 6.4rem 0;
-  margin-bottom: 3.2rem;
   text-align: center;
 
   .headline-secondary {
     color: #fff;
     font-weight: 600;
-    line-height: 1.2;
+    line-height: 1.3;
     margin-bottom: 3.2rem;
   }
   .about-body {
     font-size: 1.8rem;
-    line-height: 1.6;
+    line-height: 1.7;
     color: $light-color;
   }
 }
@@ -218,6 +220,7 @@ export default defineComponent({
   .headline-secondary {
     padding-bottom: 1.2rem;
     font-weight: 600;
+    color: $grey-color-shade;
   }
 
   .headline-secondary,
@@ -236,11 +239,6 @@ export default defineComponent({
 
     // TYPO
     text-align: center;
-    .project-img-box {
-      .project-img {
-        width: 100%;
-      }
-    }
     .project-text-box {
       .project-title {
         font-size: 2rem;
@@ -262,9 +260,10 @@ export default defineComponent({
 .section-contact {
   margin-bottom: 1.6rem;
   .headline-secondary {
-    margin-bottom: 2.4rem;
+    margin-bottom: 3.2rem;
     font-weight: 600;
-    line-height: 1.2;
+    line-height: 1.3;
+    color: $grey-color-shade;
   }
   .contact-form {
     display: flex;
@@ -274,20 +273,17 @@ export default defineComponent({
 
     .form-group {
       width: 100%;
-      label{
+      label {
         font-size: 1.4rem;
       }
       input {
         width: 100%;
-        padding: 0.4rem .8rem;
+        padding: 0.4rem 0.8rem;
         margin-top: 0.8rem;
       }
     }
-    .form-group--message {
-      width: 100%;
-      input {
-        padding: 4.8rem 0;
-      }
+    .form-group--message input {
+      padding: 4.8rem 0;
     }
 
     .btn--submit {
@@ -297,7 +293,7 @@ export default defineComponent({
 
       // BOX MODEL
       width: 100%;
-      background-color:$primary-color;
+      background-color: $primary-color;
       font-weight: 600;
       border: none;
       padding: 1.2rem 2.4rem;
@@ -313,10 +309,6 @@ export default defineComponent({
 }
 
 //////////////////////
-// Footer
-/////////////////////
-
-//////////////////////
 // UTILITY CLASSES
 /////////////////////
 .full-bleed {
@@ -327,9 +319,15 @@ export default defineComponent({
 //////////////////////
 // GENERAL
 /////////////////////
+
 .headline-primary {
+  font-weight: 700;
+  line-height: 1.3;
   font-size: 3rem;
+  margin-bottom: 1.6rem;
+  color: $grey-color-shade;
 }
+
 .headline-secondary {
   font-size: 2.4rem;
   text-align: center;
@@ -343,6 +341,7 @@ export default defineComponent({
   color: #fff;
   font-weight: 600;
   width: 100%;
+  cursor: pointer;
 
   // BOX MODEL
   background-color: $primary-color;
@@ -354,20 +353,19 @@ export default defineComponent({
 // MEDIA QUERIES
 /////////////////////
 
-// 648 px
+// 648 px tablets
 @media screen and (min-width: 34em) {
   .container {
-    max-width: 450px;
+    max-width: 45rem;
     margin: 0 auto;
   }
-
   .home {
     padding: 3.2rem 4.8rem;
   }
 
   .nav-list {
     display: flex !important;
-    gap: 2.4rem;
+    gap: 3.2rem;
   }
 
   .btn--menu {
@@ -392,9 +390,18 @@ export default defineComponent({
 // Desktop size 968px
 @media screen and (min-width: 60.5em) {
   // CONTAINER
+  a {
+    font-size: 1.5rem !important;
+  }
+
   .container {
-    max-width: 75rem;
+    max-width: 980px;
     row-gap: 12.8rem;
+  }
+  .main-header {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 12.8rem;
   }
 
   // HERO SECTION
@@ -408,6 +415,10 @@ export default defineComponent({
   .section-about {
     width: 60%;
     margin: 0 auto;
+
+    .about-body {
+      font-size: 1.7rem !important;
+    }
   }
 
   // PROJECT SECTION
@@ -419,6 +430,10 @@ export default defineComponent({
 
       .project-text-box {
         align-self: center;
+
+        .project-body {
+          font-size: 1.5rem !important;
+        }
       }
     }
   }
@@ -430,7 +445,7 @@ export default defineComponent({
     .contact-form {
       .btn--submit {
         width: auto;
-        padding: 0.8rem 2.4rem;
+        padding: 1.2rem 2.4rem;
         margin: 0 auto;
       }
     }
@@ -439,18 +454,18 @@ export default defineComponent({
   // GENERAL
   .btn-link {
     width: auto;
-    padding: 0.8rem 2.4rem;
+    padding: 1.2rem 2.4rem;
   }
 }
 
-// 1256 px
-@media screen and (min-width: 78.5em) {
+@media screen and (min-width: 75em) {
   .container {
-    max-width: 1100px;
+    max-width: 1200px;
   }
+
   .section-project {
-    .project-img {
-      width: 80% !important;
+    .project-img-box {
+      width: 80%;
     }
   }
 }
