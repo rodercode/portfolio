@@ -15,70 +15,89 @@
       </div>
     </header>
 
-    <!-- HERO SECTION -->
-    <section class="section-hero">
-      <h1 class="headline-primary">Frontend & WEB APP DEVELOPMENT</h1>
-      <p class="hero-body">
-        I build responsive, user-friendly and scalable webb-applications
-      </p>
-      <a class="btn-link">Say Hello</a>
-    </section>
+    <div class="container">
+      <!-- HERO SECTION -->
+      <section class="section-hero">
+        <h1 class="headline-primary">Frontend & WEB APP DEVELOPMENT</h1>
+        <p class="hero-body">
+          I build responsive, user-friendly and scalable webb-applications
+        </p>
+        <a class="btn-link">Say Hello</a>
+      </section>
 
-    <!-- ABOUT SECTION -->
-    <section class="section-about full-bleed">
-      <h2 class="headline-secondary">Hi, I'm Roder Snow. Nice to meet you.</h2>
-      <p class="about-body">
-        I'm Roder Snow, a passionate frontend development student with a love
-        for crafting engaging and user-friendly web experiences. Through this
-        portfolio, I'm excited to showcase some of my best projects, skills, and
-        journey in the world of frontend development.
-      </p>
-    </section>
+      <!-- ABOUT SECTION -->
+      <section class="section-about full-bleed">
+        <h2 class="headline-secondary">
+          Hi, I'm Roder Snow. Nice to meet you.
+        </h2>
+        <p class="about-body">
+          I'm Roder Snow, a passionate frontend development student with a love
+          for crafting engaging and user-friendly web experiences. Through this
+          portfolio, I'm excited to showcase some of my best projects, skills,
+          and journey in the world of frontend development.
+        </p>
+      </section>
 
-    <!-- PROJECT SECTION -->
-    <section class="section-project">
-      <h2 class="headline-secondary">My Recent Projects</h2>
-      <ul class="project-list">
-        <li v-for="project in projectList" class="project-item">
-          <div class="project-img-box">
-            <img
-              class="project-img"
-              src="../assets/img/holding-picture.jpg"
-              alt="picture of male holding a photo in his right hand"
-            />
+      <!-- PROJECT SECTION -->
+      <section class="section-project">
+        <h2 class="headline-secondary">My Recent Projects</h2>
+        <ul class="project-list">
+          <li v-for="project in projectList" class="project-item">
+            <div class="project-img-box">
+              <img
+                class="project-img"
+                src="../assets/img/holding-picture.jpg"
+                alt="picture of male holding a photo in his right hand"
+              />
+            </div>
+            <div class="project-text-box">
+              <h3 class="project-title">{{ project.title }}</h3>
+              <p class="project-body">
+                {{ project.text }}
+              </p>
+              <a class="btn-link">Viste</a>
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <!-- Contact Section -->
+      <section class="section-contact">
+        <h2 class="headline-secondary">
+          Thanks for taking your time to reach out
+        </h2>
+        <form class="contact-form">
+          <div class="form-group form-group--name">
+            <label>Name</label>
+            <input type="text" />
           </div>
-          <div class="project-text-box">
-            <h3 class="project-title">{{ project.title }}</h3>
-            <p class="project-body">
-              {{ project.text }}
-            </p>
-            <a class="btn-link">Viste</a>
+          <div class="form-group form-group--password">
+            <label>Password</label>
+            <input type="password" />
           </div>
-        </li>
-      </ul>
-    </section>
-
-    <!-- Contact Section -->
-    <section class="section-contact">
-      <h2 class="headline-secondary">
-        Thanks for taking your time to reach out
-      </h2>
-      <form class="contact-form">
-        <div class="form-group">
-          <label>Name</label>
-          <input type="text" />
-        </div>
-        <div class="form-group">
-          <label>Password</label>
-          <input type="password" />
-        </div>
-        <div class="form-group form-group--message">
-          <label>Message</label>
-          <input type="text" />
-        </div>
-        <button class="btn">Get In Touch</button>
-      </form>
-    </section>
+          <div class="form-group form-group--message">
+            <label>Message</label>
+            <input type="text" />
+          </div>
+          <button class="btn--submit">Get In Touch</button>
+        </form>
+        <ul class="contact-link-list">
+          <li>
+            <a
+              class="contact-link"
+              href="https://www.linkedin.com/in/marcus-groth-3684a1259/"
+              >LinkedIn</a
+            >
+          </li>
+          <li><a class="footer-link" href="http://gmail.com/">Gmail</a></li>
+          <li>
+            <a class="footer-link" href="https://github.com/rodercode"
+              >GitHub</a
+            >
+          </li>
+        </ul>
+      </section>
+    </div>
   </div>
 </template>
 
@@ -112,7 +131,13 @@ export default defineComponent({
 
 <style lang="scss" scoped>
 .home {
-  padding: 3.2rem 1.6rem;
+  padding: 3.2rem;
+}
+
+//////////////////////
+// CONTAINER
+/////////////////////
+.container {
   display: grid;
   row-gap: 8rem;
 }
@@ -124,6 +149,7 @@ export default defineComponent({
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-bottom: 8rem;
   .nav-list {
     display: none;
   }
@@ -135,10 +161,10 @@ export default defineComponent({
 
 .section-hero {
   margin-bottom: 3.2rem;
+  text-align: center;
 
   .headline-primary,
   .hero-body {
-    text-align: center;
     margin-bottom: 3.2rem;
   }
 }
@@ -183,8 +209,7 @@ export default defineComponent({
   .project-item {
     // DISPLAY
     display: grid;
-    grid-row: 1fr 1fr;
-    grid-column: 1fr;
+    grid-template-columns: 1fr;
     row-gap: 1.6rem;
 
     // BOX MODEL
@@ -221,27 +246,27 @@ export default defineComponent({
     margin-bottom: 2.4rem;
   }
   .contact-form {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 1.6rem;
+    justify-content: space-between;
+
     .form-group {
-      // DISPLAY
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-
-      // BOX MODEL
-      margin-bottom: 1.6rem;
-
+      width: 100%;
       input {
         width: 100%;
         padding: 0.4rem 0rem;
+        margin-top: 0.8rem;
       }
     }
     .form-group--message {
+      width: 100%;
       input {
         padding: 4.8rem 0;
       }
     }
 
-    .btn {
+    .btn--submit {
       // TYPO
       color: #fff;
       font-weight: 600;
@@ -253,7 +278,17 @@ export default defineComponent({
       padding: 1.2rem 2.4rem;
     }
   }
+  .contact-link-list {
+    display: flex;
+    justify-content: center;
+    gap: 4.8rem;
+    margin-top: 3.2rem;
+  }
 }
+
+//////////////////////
+// Footer
+/////////////////////
 
 //////////////////////
 // UTILITY CLASSES
@@ -285,11 +320,117 @@ export default defineComponent({
   text-align: center;
   color: #fff;
   font-weight: 600;
+  width: 100%;
 
   // BOX MODEL
-  width: 100%;
   background-color: gray;
   border: none;
-  padding: 1.2rem 2.4rem;
+  padding: 1.2rem 4.8rem;
+}
+
+//////////////////////
+// MEDIA QUERIES
+/////////////////////
+
+// 648 px
+@media screen and (min-width: 34em) {
+  .container {
+    max-width: 450px;
+    margin: 0 auto;
+  }
+
+  .home {
+    padding: 3.2rem 4.8rem;
+  }
+
+  .nav-list {
+    display: flex !important;
+    gap: 2.4rem;
+  }
+
+  .btn--menu {
+    display: none;
+  }
+}
+
+// 752 px
+@media screen and (min-width: 47em) {
+  .container {
+    gap: 9.6rem;
+  }
+
+  .form-group {
+    width: 45% !important;
+  }
+  .form-group--message {
+    width: 100% !important;
+  }
+}
+
+// Desktop size 968px
+@media screen and (min-width: 60.5em) {
+  // CONTAINER
+  .container {
+    max-width: 75rem;
+    row-gap: 12.8rem;
+  }
+
+  // HERO SECTION
+  .section-hero {
+    text-align: left;
+    width: 55%;
+    margin: 0 auto;
+  }
+
+  // ABOUT SECTION
+  .section-about {
+    width: 60%;
+    margin: 0 auto;
+  }
+
+  // PROJECT SECTION
+  .section-project {
+    .project-item {
+      grid-template-columns: 1fr 1fr;
+      column-gap: 6.4rem;
+      text-align: left;
+
+      .project-text-box {
+        align-self: center;
+      }
+    }
+  }
+
+  // CONTACT SECTION
+  .section-contact {
+    width: 60%;
+    margin: 0 auto;
+    .contact-form {
+      .btn--submit {
+        width: auto;
+        padding: 0.8rem 2.4rem;
+        margin: 0 auto;
+      }
+    }
+  }
+
+  // GENERAL
+  .btn-link {
+    width: auto;
+    padding: 0.8rem 2.4rem;
+  }
+}
+
+// 1256 px
+@media screen and (min-width: 78.5em) {
+  .container {
+    max-width: 1100px;
+  }
+
+  .section-project {
+    .project-img {
+      width: 80% !important;
+    }
+  }
 }
 </style>
