@@ -139,7 +139,7 @@ export default defineComponent({
 /////////////////////
 .container {
   display: grid;
-  row-gap: 8rem;
+  row-gap: 6.4rem;
 }
 
 //////////////////////
@@ -216,11 +216,15 @@ export default defineComponent({
 .section-project {
   padding: 6.4rem 0;
   .headline-secondary {
-    border-bottom: 1px solid $under-line-color;
     padding-bottom: 1.2rem;
     font-weight: 600;
   }
-  
+
+  .headline-secondary,
+  .project-item {
+    border-bottom: 1px solid $under-line-color;
+  }
+
   .project-item {
     // DISPLAY
     display: grid;
@@ -228,9 +232,8 @@ export default defineComponent({
     row-gap: 2.4rem;
 
     // BOX MODEL
-    border-bottom: 1px solid $under-line-color;
     padding: 4.8rem 0;
-    
+
     // TYPO
     text-align: center;
     .project-img-box {
@@ -257,8 +260,11 @@ export default defineComponent({
 // CONTACT SECTION
 /////////////////////
 .section-contact {
+  margin-bottom: 1.6rem;
   .headline-secondary {
     margin-bottom: 2.4rem;
+    font-weight: 600;
+    line-height: 1.2;
   }
   .contact-form {
     display: flex;
@@ -268,9 +274,12 @@ export default defineComponent({
 
     .form-group {
       width: 100%;
+      label{
+        font-size: 1.4rem;
+      }
       input {
         width: 100%;
-        padding: 0.4rem 0rem;
+        padding: 0.4rem .8rem;
         margin-top: 0.8rem;
       }
     }
@@ -288,7 +297,8 @@ export default defineComponent({
 
       // BOX MODEL
       width: 100%;
-      background-color: gray;
+      background-color:$primary-color;
+      font-weight: 600;
       border: none;
       padding: 1.2rem 2.4rem;
     }
@@ -297,7 +307,8 @@ export default defineComponent({
     display: flex;
     justify-content: center;
     gap: 4.8rem;
-    margin-top: 3.2rem;
+    margin-top: 4.8rem;
+    font-size: 1.4rem;
   }
 }
 
@@ -330,7 +341,7 @@ export default defineComponent({
   // TYPO
   text-align: center;
   color: #fff;
-  font-weight: 700;
+  font-weight: 600;
   width: 100%;
 
   // BOX MODEL
