@@ -3,7 +3,7 @@
     <!-- HEADER -->
     <header class="main-header">
       <div class="brand-logo">
-        <a class="link" href="#"> Roder.me </a>
+        <a class="link" href="#"> Roder code </a>
       </div>
       <nav class="main-nav">
         <ul class="link nav-list">
@@ -467,11 +467,11 @@ export default defineComponent({
 
 @media screen and (min-width: 75em) {
   .container {
-    max-width: 1200px;
+    max-width: 1000px;
   }
 
   .section-project .project-img-box {
-    width: 80%;
+    // width: 80%;
   }
 }
 </style>
