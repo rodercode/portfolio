@@ -1,5 +1,5 @@
 // Global styles
-import "./assets/sass/main.scss";
+import './styles/tailwind.css';
 
 // Dependencies
 import { createApp } from "vue";

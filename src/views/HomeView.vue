@@ -1,7 +1,8 @@
 <template>
   <div class="home">
+    <AppHeader />
     <!-- HEADER -->
-    <header class="main-header">
+    <!-- <header class="main-header">
       <div class="brand-logo">
         <a class="link" href="#"> Roder code </a>
       </div>
@@ -21,7 +22,7 @@
       <div class="btn btn--menu">
         <ion-icon class="icon" :icon="menu" />
       </div>
-    </header>
+    </header> -->
     <div class="container">
       <!-- HERO SECTION -->
       <section class="section-hero">
@@ -111,9 +112,13 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 import { menu } from "ionicons/icons";
+import AppHeader from "../components/AppHeader.vue";
 
 export default defineComponent({
   name: "HomeView",
+  components:{
+    AppHeader,
+  },
   data() {
     return {
       menu,
@@ -151,29 +156,29 @@ export default defineComponent({
 //////////////////////
 // HEADER
 /////////////////////
-.main-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding-bottom: 6.4rem;
+// .main-header {
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: center;
+//   padding-bottom: 6.4rem;
 
-  .brand-logo {
-    font-size: 1.4rem;
-    font-weight: 600;
-    text-transform: uppercase;
-  }
+//   .brand-logo {
+//     font-size: 1.4rem;
+//     font-weight: 600;
+//     text-transform: uppercase;
+//   }
 
-  .nav-list {
-    display: none;
-    .nav-link {
-      font-size: 1.4rem;
-    }
-  }
-  .icon {
-    height: 3.2rem;
-    width: 3.2rem;
-  }
-}
+//   .nav-list {
+//     display: none;
+//     .nav-link {
+//       font-size: 1.4rem;
+//     }
+//   }
+//   .icon {
+//     height: 3.2rem;
+//     width: 3.2rem;
+//   }
+// }
 //////////////////////
 // HERO SECTION
 /////////////////////
@@ -363,15 +368,15 @@ export default defineComponent({
     padding: 3.2rem 4.8rem;
   }
 
-  .main-header {
-    .nav-list {
-      display: flex;
-      gap: 3.2rem;
-    }
-    .btn--menu {
-      display: none;
-    }
-  }
+  // .main-header {
+  //   .nav-list {
+  //     display: flex;
+  //     gap: 3.2rem;
+  //   }
+  //   .btn--menu {
+  //     display: none;
+  //   }
+  // }
 }
 
 // 752 px tablets
@@ -401,18 +406,18 @@ export default defineComponent({
   }
 
   // MAIN HEADER
-  .main-header {
-    max-width: 1000px;
-    margin: 0 auto;
-    padding-bottom: 12.8rem;
-    .link {
-      font-size: 1.5rem;
-    }
+  // .main-header {
+  //   max-width: 1000px;
+  //   margin: 0 auto;
+  //   padding-bottom: 12.8rem;
+  //   .link {
+  //     font-size: 1.5rem;
+  //   }
 
-    .nav-list .nav-link {
-      font-size: 1.5rem;
-    }
-  }
+  //   .nav-list .nav-link {
+  //     font-size: 1.5rem;
+  //   }
+  // }
 
   // HERO SECTION
   .section-hero {
